@@ -1,0 +1,24 @@
+<h1>
+<%= Time.now %>
+</h1>
+
+<a href="/new" class="href">Create a new recipe here!</a>
+
+<div class="card-columns">
+
+
+  <% @recipes.each_with_index do |recipe, index| %>
+    <div class="card p-3  " >
+
+      <div class="card-title"><%= recipe.name %></div>
+      <div class="card-body"><%= recipe.description %></div>
+      <a href="#" class="card-link"><form method="POST" action="/delete">
+            <input name=<%= index.to_s %>
+            <input type="submit" value="Remove?">
+          </form></a>
+        </div>
+  <% end %>
+</div>
+
+
+
